@@ -1,0 +1,16 @@
+[
+    {"key":1,"img":"https://res.cloudinary.com/dtljv9iws/image/upload/f_auto,q_auto/qcykilugtmhmrjzilpto", "title":"Shimao Riviera", "subtitle":"Lujiazui", "className":"w-full aspect-auto mb-6"},
+    {"key":2,"img":"/img/spa1.jpg","className":"w-full aspect-auto mb-6"},
+
+    {"key":3,"img":"/img/drawing room side.jpg", "title":"St Regis", "subtitle":"Jingan","className":"w-full aspect-auto mb-6"},
+    {"key":4,"img":"/img/St Regis.jpg","className":"w-full aspect-auto mb-6"},
+    {"key":7,"img":"/img/st regis grand.jpg","className":"w-full aspect-auto mb-6"},
+    {"key":5,"img":"/img/shangrila side.jpg","className":"w-full aspect-auto mb-6"},
+    {"key":6,"img":"/img/drawing room.png","className":"w-full aspect-auto mb-6"},
+   
+    {"key":8,"img":"/img/tea.jpg","className":"w-full aspect-auto mb-6"},
+    {"key":9,"img":"/img/IP Mall.png","title":"IP Mall", "subtitle":"Banquet in loving memory of Teresa Teng","className":"w-full aspect-auto mb-6"},
+
+    {"key":10,"img":"/img/band.jpg","className":"w-full aspect-auto mb-6"},
+    {"key":11,"img":"/img/shangrila.jpg","className":"w-full aspect-auto mb-6"},
+    {"key":12,"img":"/img/home.jpg","className":"w-full aspect-auto mb-6"}]

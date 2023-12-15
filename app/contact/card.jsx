@@ -27,7 +27,7 @@ export function Card({Title,subTitle}) {
         {  Title === "Email:" ? <Email /> : Title === "Github:" ? <Github /> : null}
          <p>{Title}</p>
           <br /><br />
-          {Title === 'QR:' ? <Image src="/contact/qr.png" alt="Image" width={100} height={100} className="rounded-md object-cover" /> : <p>{subTitle}</p>}
+          {Title === 'Chat:' ? <Image src="/contact/qr.png" alt="Image" width={100} height={100} className="rounded-md object-cover" /> : <p>{subTitle}</p>}
         </div>
       </div>)
 }
