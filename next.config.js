@@ -14,6 +14,14 @@ const nextConfig = {
             hostname: 'res.cloudinary.com'
           },
         ]
-    }
+    },
+    videos: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'res.cloudinary.com'
+        },
+      ]
+  }
 }
 module.exports = nextConfig
