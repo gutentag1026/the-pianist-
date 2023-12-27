@@ -18,7 +18,9 @@ export default async function Videos() {
     return (<>
     <script
       src="https://product-gallery.cloudinary.com/all.js"
-      type="text/javascript">
+      type="text/javascript"
+      defer
+      >
     </script>
         <Suspense fallback={<p>loading...</p>}>
       
@@ -36,7 +38,7 @@ export default async function Videos() {
             {/* </div> */}
 
         </Suspense>
-  
+        
          </>
     )
 }

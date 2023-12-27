@@ -12,46 +12,27 @@ async function getData() {
 export default async function Biography() {
     const data = await getData()
     const images = await getAssets('CLOUDINARY_IMAGE_FOLDER')
-    return ( <div className="flex  min-h-screen flex-col px-12">
-          <div className="gap-2 columns-6 overflow-y-auto h-124 ...">  
+    // console.log(images)
+
+    return ( 
+     <div className="flex min-h-screen flex-col px-12">
+      <div className="p-5 sm:p-0">
+           <div className="columns-1 gap-1 sm:columns-2 sm:gap-4 md:columns-5 lg:columns-6 [&>img:not(:first-child)]:mt-8">
+           
                  {images.map(({ id, public_id, format}) => {
                   let url = `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`
-
-            // <Link
-            //   key={id}
-            //   href={`/?photoId=${id}`}
-            //   as={`/p/${id}`}
-            //   ref={id === Number(lastViewedPhoto) ? lastViewedPhotoRef : null}
-            //   shallow
-            //   className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
-            // >
-            
-           return  <Image
-                key={id}
-                alt="pianist working photo"
-                className="transform brightness-90 transition will-change-auto group-hover:brightness-110 my-2"
-                style={{ transform: 'translate3d(0, 0, 0)' }}
-                // placeholder="blur"
-                // blurDataURL={blurDataUrl}
-                src={url}
-                width={720}
-                height={480}
-                qiality={100}
-                sizes="(max-width: 640px) 100vw,
-                  (max-width: 1280px) 50vw,
-                  (max-width: 1536px) 33vw,
-                  25vw"
-              />
-            // </Link>
-                 })}
+                  return <div key={id} className="my-4">
+                   <img src={url} alt="pianist" />
+                  </div>
+                })}
             </div>
-                <div className="flex  min-h-screen flex-row justify-between gap-24 py-12">
+            <div className="flex flex-row justify-between gap-24 py-12">
                     { data.map(d => {
                         return <div key={d.key}>{d.content}</div>
                     }) }
-                </div>
+            </div>  
             </div>
-        )
+    </div> )
 }
 
 export async function getAssets(folder) {
