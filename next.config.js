@@ -14,6 +14,15 @@ const nextConfig = {
             hostname: 'res.cloudinary.com'
           },
         ]
+    },
+    async redirects() {
+      return [
+        {
+          source: '/',
+          destination: '/biography',
+          permanent: true,
+        },
+      ]
     }
 }
 module.exports = nextConfig
