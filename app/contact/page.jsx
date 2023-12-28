@@ -1,6 +1,5 @@
 import { Card } from "./card"
 
-
 export default function Contact() {
     return (
     <div className="flex flex-row items-center">

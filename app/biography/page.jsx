@@ -1,5 +1,5 @@
 import cloudinary from "@/utils/cloudinary"
-import Image from 'next/image'
+
 // import getBase64ImageUrl from "@/utils/generateBlurPlaceholder"
 
 const biography =[{key:1,content:"Talented pianist, Wendy performs in various occasions, such as luxury hotels(Shangrila West, St. Regis, The Longemont Shanghai), IP Mall, Residence of Consul General at the  Austrian Consulate General in Shanghai, Flower Expo in Chongming Island, Peace Lutheran in San Jose and many others."},

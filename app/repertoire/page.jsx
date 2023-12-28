@@ -60,6 +60,7 @@ export const repertoires =
                                 ]
                             }
     }
+
 export default function repertoire() {
     return (
     <div><AccordionDemo repertoires={repertoires} /></div>

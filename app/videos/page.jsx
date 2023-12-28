@@ -22,23 +22,9 @@ export default async function Videos() {
       defer
       >
     </script>
-        <Suspense fallback={<p>loading...</p>}>
-      
-        <PlayList cloudName={cloudName} mediaAssets={mediaAssets} />
-            {/* <div className="flex  min-h-screen flex-col px-12"> */}
-             {/* <div className="gap-12 columns-6 px-12">  */}
-        {/* {
-            videos.map(({ id, public_id, format, width, height }) => { 
-
-                return <VideoPlayer key={id} public_id={public_id} cloudName={cloudName} width={width} height={height} format={format} /> })
-        }  */}
-         
-          
-                {/* </div> */}
-            {/* </div> */}
-
-        </Suspense>
-        
-         </>
+    <Suspense fallback={<p>loading...</p>}>
+             <PlayList cloudName={cloudName} mediaAssets={mediaAssets} />
+    </Suspense> 
+    </>
     )
 }
