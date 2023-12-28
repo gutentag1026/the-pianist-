@@ -3,8 +3,8 @@ import { useEffect } from "react";
 
 export default function PlayList({cloudName, mediaAssets}) {
   useEffect(() => {
-   // console.log('window',window)
-    if (window){
+   console.log('window',window)
+   
         const productGallery = cloudinary.galleryWidget({
             container: "#image-gallery",
             cloudName: cloudName,
@@ -16,7 +16,7 @@ export default function PlayList({cloudName, mediaAssets}) {
             sortProps:{ source: "public_id", direction: "desc" }
           })
           productGallery.render();
-    }
+    
   }, []);
 
   return (
