@@ -5,7 +5,7 @@ import PlayList from '../../utils/PlayList'
 
 export default async function Videos() {
     const videos = await getAssets('CLOUDINARY_VIDEO_FOLDER')
-    console.log(videos)
+   // console.log(videos)
     const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
     const mediaAssets = videos.map(v => {
         return {

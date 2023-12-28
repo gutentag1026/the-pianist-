@@ -3,8 +3,8 @@ import { useEffect } from "react";
 
 export default function PlayList({cloudName, mediaAssets}) {
   useEffect(() => {
-    console.log('window',window)
-    if (typeof window !== undefined){
+   // console.log('window',window)
+    if (window){
         const productGallery = cloudinary.galleryWidget({
             container: "#image-gallery",
             cloudName: cloudName,
