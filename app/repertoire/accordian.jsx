@@ -13,7 +13,7 @@ import { AvatarDemo } from "./avatar"
         return <Accordion key={artist} type="single" collapsible className="w-full" defaultValue="Johann Sebastian Bach">
         <AccordionItem value={artist}>
           <AccordionTrigger>
-            <AvatarDemo src={`/composer/${artist}.jpeg`} artist={artist} />
+            <AvatarDemo src={`./composer/${artist}.jpeg`} artist={artist} />
            <div className="flex flex-col items-center justify-between">
             <div>{artist}</div> 
             <small className="text-sm font-medium leading-none mt-1">{desc}</small>
