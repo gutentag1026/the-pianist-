@@ -2,7 +2,7 @@ import Image from "next/image"
 const Github = () => {
     return <Image
             className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-            src="/github.svg"
+            src="./github.svg"
             alt="Github Logo"
             width={150}
             height={37}
@@ -12,7 +12,7 @@ const Github = () => {
 const Email = () => {
     return <Image
     className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-    src="/mail.svg"
+    src="./mail.svg"
     alt="envelope closed"
     width={150}
     height={37}
@@ -27,7 +27,7 @@ export function Card({Title,subTitle}) {
         {  Title === "Email:" ? <Email /> : Title === "Github:" ? <Github /> : null}
          <p>{Title}</p>
           <br /><br />
-          {Title === 'Chat:' ? <Image src="/contact/qr.png" alt="Image" width={100} height={100} className="rounded-md object-cover" /> : <p>{subTitle}</p>}
+          {Title === 'Chat:' ? <Image src="./contact/qr.png" alt="Image" width={100} height={100} className="rounded-md object-cover" /> : <p>{subTitle}</p>}
         </div>
       </div>)
 }
