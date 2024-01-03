@@ -13,7 +13,11 @@ export default function PlayList({cloudName, mediaAssets}) {
             borderWidth: 5,
             border:'black',
             transition: "fade",
-            sortProps:{ source: "public_id", direction: "desc" }
+            sortProps:{ source: "public_id", direction: "desc" },
+            videoProps: {
+                  playerType: "cloudinary",
+                  showJumpControls: true
+                }
           })
           productGallery.render();
     
