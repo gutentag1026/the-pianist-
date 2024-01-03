@@ -6,7 +6,7 @@ export default function PlayList({cloudName, mediaAssets}) {
    console.log('window playvideo',window)
    
         const productGallery = cloudinary.galleryWidget({
-            container: "#image-gallery",
+            container: "#my-gallery",
             cloudName: cloudName,
             mediaAssets: mediaAssets,
             aspectRatio: "4:3",
