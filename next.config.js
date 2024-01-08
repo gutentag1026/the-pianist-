@@ -26,6 +26,14 @@ const nextConfig = {
           },
         ]
     },
+    videos: {
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: 'res.cloudinary.com'
+          },
+        ]
+    },
     async redirects() {
       return [
         {
