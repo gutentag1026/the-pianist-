@@ -1,16 +1,31 @@
 import cloudinary from "@/utils/cloudinary"
-
+import { MongoClient } from "mongodb"
 // import getBase64ImageUrl from "@/utils/generateBlurPlaceholder"
 
-const biography =[{key:1,content:"Talented pianist, Wendy performs in various occasions, such as luxury hotels(Shangrila West, St. Regis, The Longemont), IP Mall, Residence of Consul General at the  Austrian Consulate General in Shanghai, Flower Expo in Chongming Island, Peace Lutheran in San Jose and many others."},
-{key:2,content:"A full-fleged pianist, as much in her broad repertoires as in her personal way of presenting the works of Chopin with genuinely poetic touch and the works of romantic period artist with deeply expressive intepretation and baroque with logic and energetic spirit."},{key:3,content:"2020 saw Aurora, the first neo-classic band started by Wendy. The band's members comes from 3 continents, 4 countries. With one vocal and guitarist, a keyboard, a bass and a drummer."}]
-
+//  const bio =[{key:1,content:"Talented pianist, Wendy performs in various occasions, such as luxury hotels(Shangrila West, St. Regis, The Longemont), IP Mall, Residence of Consul General at the  Austrian Consulate General in Shanghai, Flower Expo in Chongming Island, Peace Lutheran in San Jose and many others."},
+//  {key:2,content:"A full-fleged pianist, as much in her broad repertoires as in her personal way of presenting the works of Chopin with genuinely poetic touch and the works of romantic period artist with deeply expressive intepretation and baroque with logic and energetic spirit."},
+//  {key:3,content:"2020 saw Aurora, the first neo-classic band started by Wendy. The band's members comes from 3 continents, 4 countries. With one vocal and guitarist, a keyboard, a bass and a drummer."}]
+ 
 async function getData() {
-    return biography
+  try {
+    const connect = process.env.MONGODB_URI
+    const client = new MongoClient(connect);
+    // Get the database and collection on which to run the operation
+    const database = client.db("pianist");
+    const biography = database.collection("biography")
+    const cursor = biography.find()
+    const res = await cursor.toArray()
+    client.close()
+    return res
+  }
+  catch(e){
+    console.log(e) 
+  }
 }
 
 export default async function Biography() {
     const data = await getData()
+    console.log('bio',data)
     const images = await getAssets('CLOUDINARY_IMAGE_FOLDER')
 
     return <div className="flex min-h-screen flex-col px-12">
@@ -32,7 +47,7 @@ export default async function Biography() {
              </div>
              <div className="flex flex-row justify-between gap-24 py-12">
                      { data.map(d => {
-                         return <div key={d.key}>{d.content}</div>
+                         return <div key={d._id}>{d.content}</div>
                      }) }
              </div>  
    
