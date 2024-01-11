@@ -24,6 +24,13 @@ export default function RootLayout({ children }) {
           <Navbar />
       </div>
       </Provider>
+      <script
+        src="https://product-gallery.cloudinary.com/all.js"
+        type="text/javascript"
+        async
+      >
+        <script async src="https://polyfill.io/v3/polyfill.min.js?features=default%2Cfetch%2CArray.prototype.includes%2CObject.values%2CArray.prototype.find%2CNumber.isInteger"></script>
+      </script>
       </body>
     </html>
   )
