@@ -25,29 +25,29 @@ async function getData() {
 
 export default async function Biography() {
     const data = await getData()
-    console.log('bio',data)
+    // console.log('bio',data)
     const images = await getAssets('CLOUDINARY_IMAGE_FOLDER')
 
-    return <div className="flex min-h-screen flex-col px-12">
+    return <div className="flex min-h-screen flex-col px-1 md:px-12">
     
-            <div className="overflow-y-auto h-[70vh] w-full grid grid-cols-7 gap-4">
+            <div className="overflow-y-auto h-[45vh] md:h-[70vh] w-full grid grid-cols-1 my-3 md:my-0 md:grid-cols-7 gap-0 md:gap-4">
         
                   {images.map(({ id, public_id, format, width, height}) => {
                    const ratio = width > height
                    const url = `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${public_id}.${format}`
-                   return ratio ? <div key={id}  className="grid grid-cols-subgrid gap-4 col-span-2">
+                   return ratio ? <div key={id}  className="grid md:grid-cols-subgrid gap-1 md:gap-4 col-span-1 md:col-span-2">
                       <div key={id} className={`my-0 flex items-center`}>
                         <img src={url} alt="pianist" />
                       </div>
-                    </div> : <div key={id} className={`flex items-center`}>
+                    </div> : <div key={id} className={`flex items-center my-1 md:my-0`}>
                     <img src={url} alt="pianist" />
                    </div>
                  })}
        
              </div>
-             <div className="flex flex-row justify-between gap-24 py-12">
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-12 py-5 md:py-12">
                      { data.map(d => {
-                         return <div key={d._id}>{d.content}</div>
+                         return <div key={d._id}><p class="text-xs md:text-base">{d.content}</p></div>
                      }) }
              </div>  
    

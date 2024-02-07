@@ -18,7 +18,9 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
       >
-      <div className="flex min-h-screen flex-row justify-between p-12">
+      <div className="grid grid-cols-1 md:flex min-h-screen flex-row justify-between p-12">
+
+      {/* <div className="flex min-h-screen flex-row justify-between p-12"> */}
           <div><Links /></div>
           <div>{children}</div>
           <Navbar />

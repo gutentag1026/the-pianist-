@@ -23,7 +23,7 @@ export default function PlayList({cloudName, mediaAssets}) {
   }
   }, []);
 
-  return <div style={{width:'1000px', margin:'0 10px'}}>
+  return <div style={{width:'1000px'}}>
             <div id="my-gallery"></div>
           </div>    
 }

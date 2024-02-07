@@ -16,14 +16,14 @@ export default async function Videos() {
     })
    
     return (<>
-    <Suspense fallback={<p>loading...</p>}>
-             <PlayList cloudName={cloudName} mediaAssets={mediaAssets} />
-    </Suspense> 
-    <script
-      src="https://product-gallery.cloudinary.com/all.js"
-      type="text/javascript"
-      >
-    </script>
-    </>
+                <Suspense fallback={<p>loading...</p>}>
+                        <PlayList cloudName={cloudName} mediaAssets={mediaAssets} />
+                </Suspense> 
+                <script
+                    src="https://product-gallery.cloudinary.com/all.js"
+                    type="text/javascript"
+                >
+                </script>
+            </>
     )
 }
